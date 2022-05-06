@@ -1,0 +1,121 @@
+databaseChangeLog:
+  - changeSet:
+      id: 21
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/book/book.sql
+  - changeSet:
+      id: 22
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/author/author.sql
+  - changeSet:
+      id: 23
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/genre/genre.sql
+  - changeSet:
+      id: 24
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/other/document.sql
+  - changeSet:
+      id: 25
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/other/faq.sql
+  - changeSet:
+      id: 26
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/user/user.sql
+  - changeSet:
+      id: 27
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/payment/balance_transaction.sql
+  - changeSet:
+      id: 28
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/review/book_review.sql
+  - changeSet:
+      id: 29
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/review/book_review_like.sql
+  - changeSet:
+      id: 30
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/review/message.sql
+  - changeSet:
+      id: 31
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/tag/tag.sql
+  - changeSet:
+      id: 32
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/user/user_contact.sql
+  - changeSet:
+      id: 33
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/book/file/book_file.sql
+  - changeSet:
+      id: 34
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/book/file/book_file_type.sql
+  - changeSet:
+      id: 35
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/book/file/file_download.sql
+  - changeSet:
+      id: 36
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/book/link/book2author.sql
+  - changeSet:
+      id: 37
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/book/link/book2genre.sql
+  - changeSet:
+      id: 38
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/book/link/book2tag.sql
+  - changeSet:
+      id: 39
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/book/link/book2user_type.sql
+  - changeSet:
+      id: 40
+      author: nx
+      changes:
+        - sqlFile:
+            path: sql/data/book/link/book2user.sql

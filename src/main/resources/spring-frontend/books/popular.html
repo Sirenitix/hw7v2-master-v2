@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>BOOKSHOP</title>
+  <meta name="description" content="Описание страницы">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+  <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-SemiBold.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-Light.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-Medium.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/assets/fonts/Montserrat/Montserrat-ExtraBold.woff2" as="font" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/fonts.min.css?v=33498857">
+  <link rel="stylesheet" href="/assets/css/basic.min.css?v=33498857">
+  <link rel="stylesheet" href="/assets/css/extra.min.css?v=33498857">
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script defer src="/assets/js/scripts.min.js?v=33498857"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/assets/js/scripts.js"></script>
+</head>
+<body class="Site">
+  <header th:replace="~{fragments/header_fragment :: headerFragment}"></header>
+
+  <div class="Middle">
+    <div class="wrap">
+      <main class="Middle-main">
+        <ul class="breadcrumbs"
+            th:replace="~{fragments/bread_fragment :: breadcrumps(category = #{topbar.popular})}"></ul>
+        <div class="Section">
+          <div class="Section-header">
+            <h1 class="Section-title" th:text="#{topbar.popular}">Популярное
+            </h1>
+          </div>
+          <div class="Cards Cards_refresh">
+
+            <div class="Card" th:each="book : ${popularBooks}">
+              <div class="Card-picture"><a th:href="@{'/books/' + ${book.slug}}" href="#"><img src="/assets/img/content/main/card.jpg" th:src="${book.image}" alt="card.jpg"/></a>
+              </div>
+              <div class="Card-content">
+                <strong class="Card-title"><a th:href="@{'/books/' + ${book.slug}}" href="#" th:text="${book.title}">Техника</a>
+                </strong>
+                <div class="Card-description" th:text="${book.authors[0]}">Кондратенко Александр Петрович
+                </div>
+                <div class="Card-cost"><span class="Card-priceOld" th:text="${book.discount}">₽300.00</span><span class="Card-price" th:text="${book.price}">₽190.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="Cards-footer Cards-footer_center"><a class="btn btn_primary" href="#" data-refreshshow="popular" data-refreshoffset="0" data-refreshlimit="20">Показать еще</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <footer th:replace="~{fragments/footer_fragment :: footerFragment}"></footer>
+  <script src="/assets/plg/jQuery/jquery-3.5.1.min.js"></script>
+</body></html>
